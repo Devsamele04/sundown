@@ -1,0 +1,436 @@
+@font-face {
+  font-family: neu;
+  src: url(./fonts/NeueHaasDisplayMediu.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "neu";
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+#main {
+  /* background-color: #000; */
+  position: relative;
+  z-index: 10;
+}
+#loader {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  transition: all ease 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#loader h1 {
+  font-size: 5vw;
+  color: transparent;
+  background: linear-gradient(to right, orange, orangered);
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: absolute;
+  opacity: 0;
+  animation: load 1s 1s;
+  animation-timing-function: linear;
+}
+#loader h1:nth-child(2) {
+  animation-delay: 2s;
+}
+#loader h1:nth-child(3) {
+  animation-delay: 3s;
+}
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#page1 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #efeae3;
+  position: relative;
+  padding: 30px;
+}
+nav {
+  height: 6vw;
+  width: 100%;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#nav-part2 {
+  display: inline-block;
+  display: flex;
+  gap: 1.5vw;
+}
+#nav-part2 h4 {
+  color: #000000;
+  font-size: 1vw;
+  border: 1px solid #00000070;
+  padding: 15px 20px;
+  border-radius: 30px;
+  position: relative;
+  transition: all ease 0.4s;
+  overflow: hidden;
+}
+#nav-part2 h4::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  left: 0;
+  bottom: -100%;
+  border-radius: 30%;
+  transition: all ease 0.4s;
+}
+#nav-part2 h4:hover::after {
+  bottom: 0;
+}
+#nav-part2 h4 > a {
+  text-decoration: none;
+  color: #000000;
+  position: relative;
+  z-index: 9;
+}
+#nav-part2 h4:hover > a {
+  color: #fff;
+}
+#center {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* background-color: yellow; */
+  border-bottom: 1px solid #000;
+  padding-bottom: 3vw;
+}
+#left p {
+  width: 30vw;
+  font-size: 2vw;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 2.5vw;
+}
+#right h1 {
+  font-size: 10vw;
+  text-align: right;
+  line-height: 8.5vw;
+}
+#page1 > video {
+  width: 100%;
+  border-radius: 30px;
+  margin-top: 3vw;
+  position: relative;
+}
+#hero-shape {
+  position: absolute;
+  width: 46vw;
+  height: 36vw;
+  right: 0;
+  top: 86vh;
+}
+#hero1 {
+  height: 100%;
+  width: 100%;
+  background-color: #ff340c;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  filter: blur(20px);
+  position: absolute;
+}
+#hero2 {
+  height: 30vw;
+  width: 30vw;
+  background: linear-gradient(#ff340c, #ff510cd2);
+  border-radius: 50%;
+  filter: blur(20px);
+  position: absolute;
+  animation-name: anime2;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#hero3 {
+  height: 30vw;
+  width: 30vw;
+  background: linear-gradient(#ff340c, #ff510cd2);
+  border-radius: 50%;
+  filter: blur(20px);
+  position: absolute;
+  animation-name: anime;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes anime {
+  from {
+    transform: translate(5%, -5%);
+  }
+  to {
+    transform: translate(-20%, 20%);
+  }
+}
+@keyframes anime2 {
+  from {
+    transform: translate(5%, -5%);
+  }
+  to {
+    transform: translate(-20%, 30%);
+  }
+}
+
+/* page-2 */
+
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #efeae3;
+  position: relative;
+  padding: 5vw 0;
+}
+#moving-text {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.con {
+  /* background-color: lightblue; */
+  white-space: nowrap;
+  display: inline-block;
+  animation: move 10s linear infinite;
+}
+#moving-text h1 {
+  font-size: 8vw;
+  display: inline-block;
+}
+#gola {
+  height: 50px;
+  width: 50px;
+  background-color: #ff340c;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1vw 2vw;
+}
+
+@keyframes move {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
+
+#page2-bottom {
+  height: 85vh;
+  width: 100%;
+  padding: 4.5vw;
+  /* background-color: aliceblue; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 9;
+}
+#page2-bottom h2 {
+  font-size: 3.6vw;
+  width: 55%;
+  line-height: 4vw;
+}
+#bottom-part2 {
+  width: 20%;
+  margin-top: 5vw;
+}
+#bottom-part2 > img {
+  width: 100%;
+  border-radius: 20px;
+}
+#bottom-part2 > p {
+  margin-top: 2vw;
+}
+
+#page2 #gooey {
+  height: 30vw;
+  width: 30vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff340c, #ff5c0b);
+  top: 50%;
+  left: 25%;
+  filter: blur(20px);
+  animation: gooey 5s ease-in-out infinite alternate;
+}
+@keyframes gooey {
+  from {
+    transform: translate(10%, -10%) skew(0);
+  }
+  to {
+    transform: translate(-10%, 0%) skew(-8deg);
+  }
+}
+
+#page3 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #efeae3;
+  /* padding-top: 3vw; */
+}
+.elem {
+  height: 130px;
+  width: 100%;
+  border-bottom: 1px solid #00000069;
+  border-top: 1px solid #00000069;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 3vw;
+}
+.elem > h1 {
+  font-size: 2.5vw;
+  z-index: 9;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: orange;
+  position: absolute;
+  left: 0;
+  top: -100%;
+  transition: all ease 0.3s;
+}
+.elem:hover .overlay {
+  top: 0;
+}
+#fixed-image {
+  height: 30vw;
+  width: 23vw;
+  /* background-color: green; */
+  position: fixed;
+  border-radius: 10px;
+  z-index: 99;
+  left: 60%;
+  top: 25%;
+  display: none;
+  background-size: cover;
+  background-position: center;
+}
+
+#page4 {
+  height: 100vh;
+  width: 100%;
+  background-color: #efeae3;
+  padding: 3vw;
+}
+#page4 > button {
+  padding: 20px 30px;
+  font-size: 15px;
+  color: #000000e5;
+  background-color: #efeae3;
+  border-radius: 25px;
+  border: 1px solid #0000004d;
+}
+#project-container {
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+  border-radius: 35px;
+  margin-top: 2vw;
+  display: flex;
+  overflow: hidden;
+}
+#project-container > #left {
+  height: 100%;
+  width: 40%;
+  background-color: rgb(30, 29, 29);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#h1s {
+  font-size: 2vw;
+  text-align: left;
+  color: #fff;
+  border-left: 1px solid #fff;
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+#project-container > #right {
+  height: 100%;
+  width: 60%;
+  background-image: url(https://images.unsplash.com/photo-1558898452-e5c989f41b27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+}
+
+#page5 {
+  height: 15vh;
+  width: 100%;
+  background-color: #efeae3;
+}
+#page6 {
+  height: 100vh;
+  width: 100%;
+  /* background-color: #efeae3; */
+}
+
+#footer {
+  position: fixed;
+  z-index: 9;
+  height: 100vh;
+  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1613832288685-5c81e86f89a5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  bottom: 0;
+  color: #ebe9e9;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+#footer h1 {
+  font-size: 23vw;
+}
+#footer-div {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 2vw;
+  margin-bottom: 5vw;
+}
+#footer-div h2 {
+  text-transform: uppercase;
+}
+#footer-bottom {
+  border-top: 1px solid #dadada;
+  height: 10vh;
+  width: 100%;
+}
