@@ -26,3 +26,9 @@ elems.forEach(function (e) {
     setTimeout(function () {
     loader.style.top ="-100%";
     },4200)
+
+
+
+    document.addEventListener("contextmenu",function(e){
+      e.preventDefault();
+    });
